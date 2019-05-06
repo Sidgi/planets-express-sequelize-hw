@@ -41,7 +41,7 @@ Endpoints: /planets and /planets/random
 1. Now, add a post route to `post` a new planet.
 
 ### References
-- [Express Lesson](https://git.generalassemb.ly/wdi-nyc-bananas/js-express-intro-lesson)
+- [Express Lesson](https://git.generalassemb.ly/sei-nyc-jeopardy/js-express-intro-lesson)
 - [Express docs](https://expressjs.com/)
 - [npm express](https://www.npmjs.com/package/express)
 - [npm morgan](https://www.npmjs.com/package/morgan)
