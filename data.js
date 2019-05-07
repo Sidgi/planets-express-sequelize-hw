@@ -1,8 +1,7 @@
-// 20190506194030
-// https://wdi-nyc-planets-api.herokuapp.com/planets
 
-{
-  "planets": [
+
+
+  let planets =  [
     {
       "id": 1,
       "name": "Zambodia",
@@ -1188,4 +1187,5 @@
       "updated_at": "2019-03-22T19:51:24.564Z"
     }
   ]
-}
+
+  module.exports = planets;
