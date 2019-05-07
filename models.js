@@ -7,14 +7,12 @@ const solarDb = new Sequelize({
 
 const Planet = solarDb.define("planet",{
 name:{
-  type: Sequelize.STRING,
-  allowNull:false
+  type: Sequelize.TEXT,
 },
 num_moons:{
   type:Sequelize.INTEGER,
-  allowNull:false
 },
-color: Sequelize.CHAR(255)
+color: Sequelize.TEXT
 })
 
 module.exports = {
