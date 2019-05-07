@@ -12,7 +12,7 @@ planetRouter.get('/',async(req,res)=>{
   } 
 });
 
-planetRouter.get('/:id',async(req,res)=>{
+planetRouter.get('/one/:id',async(req,res)=>{
   try{
     const onePlanet = await Planet.findByPk(req.params.id);
     res.send(onePlanet);
@@ -31,9 +31,26 @@ planetRouter.post('/create',async(req,res)=>{
 })
 planetRouter.get('/random', async(req,res)=>{
   try{
-
+      const all = await Planet.findAll();
+      const length = all.length;
+      const randNumber = Math.floor(Math.random()*length);
+      const randomPlanet = await Planet.findAll({
+        where:{
+          id:randNumber
+        }
+      })
+      res.send(randomPlanet)
   }catch(e){
     console.log(e.message)
+  }
+})
+planetRouter.delete('/delete/:id',async(req,res)=>{
+  try{
+   const deletedPlanet =  await Planet.findByPk(req.params.id);
+   await deletedPlanet.destroy();
+   res.send(deletedPlanet)
+  }catch(e){
+    console.log(e)
   }
 })
 module.exports = planetRouter;
