@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 const solarDb = new Sequelize({
   database:"solar_system_db",
   dialect:"postgres",
@@ -15,7 +16,16 @@ num_moons:{
 color: Sequelize.TEXT
 })
 
+const Star = solarDb.define("star",{
+  name:Sequelize.STRING,
+  size:Sequelize.STRING,
+  life_cycle: Sequelize.STRING
+})
+Star.hasMany(Planet);
+Planet.belongsTo(Star);
 module.exports = {
   solarDb,
-  Planet
+  Planet,
+  Star,
+  Op
 }
